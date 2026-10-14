@@ -1,35 +1,46 @@
 # from.php
+<!DOCTYPE html>
 <html>
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+</head>
 <body>
 
-<form method="post">
+    <h2>Registration Form</h2>
 
-Name: <input type="text" name="name"><br><br>
+    <form method="post">
 
-Fname: <input type="text" name="fname"><br><br>
+        Name:
+        <input type="text" name="name"><br><br>
 
-Lname: <input type="text" name="lname"><br><br>
+        First Name:
+        <input type="text" name="fname"><br><br>
 
-Phone: <input type="text" name="phone"><br><br>
+        Last Name:
+        <input type="text" name="lname"><br><br>
 
-City: <input type="text" name="city"><br><br>
+        Phone:
+        <input type="tel" name="phone"><br><br>
 
-<input type="submit" name="send" value="Send">
+        City:
+        <input type="text" name="city"><br><br>
 
-</form>
+        <input type="submit" name="submit" value="Submit">
 
-<?php
+    </form>
 
-if(isset($_POST['send']))
-{
-    echo $_POST['name']."<br>";
-    echo $_POST['fname']."<br>";
-    echo $_POST['lname']."<br>";
-    echo $_POST['phone']."<br>";
-    echo $_POST['city'];
-}
+    <?php
+    if (isset($_POST['submit'])) {
 
-?>
+        echo "Name: " . htmlspecialchars($_POST['name']) . "<br>";
+        echo "First Name: " . htmlspecialchars($_POST['fname']) . "<br>";
+        echo "Last Name: " . htmlspecialchars($_POST['lname']) . "<br>";
+        echo "Phone: " . htmlspecialchars($_POST['phone']) . "<br>";
+        echo "City: " . htmlspecialchars($_POST['city']) . "<br>";
+
+    }
+    ?>
 
 </body>
 </html>
